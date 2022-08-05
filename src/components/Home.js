@@ -23,12 +23,13 @@ const Item = styled(Paper)(({ theme }) => ({
 const Home = () => {
 
     const [dataArray, setDataArray] = useState([]);
-    const [finaldata, setFinalData] = useState([]);
+    const [finalData, setFinalData] = useState([]);
 
     useEffect(() => {
         const apiCall = async () => {
             let responseData = await performApiCall();
             setDataArray(responseData);
+            setFinalData(responseData);
         }
         apiCall();
     }, []);
@@ -83,12 +84,12 @@ const Home = () => {
                 name="search"
             />
         </Stack>
-        <Grid container spacing={2}>
-            {dataArray.map((data)=>{
+        <Grid container spacing={2} sx={{margin: 2}}>
+            {finalData.map((data)=>{
                         return (
-                          <Grid item xs={6} md={3} key={data.id}>
+                          <Grid item xs={6} md={4} key={data.id}>
                             <Item>
-                              <ResourceCard product={data} key={data.id}/>
+                              <ResourceCard resource={data} key={data.id}/>
                             </Item>
                           </Grid>
                           );

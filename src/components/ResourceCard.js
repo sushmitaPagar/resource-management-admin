@@ -1,42 +1,41 @@
-import { AddShoppingCartOutlined } from "@mui/icons-material";
 import {
-  Button,
   Card,
-  CardActions,
   CardActionArea,
   CardContent,
   CardMedia,
-  Rating,
   Typography,
 } from "@mui/material";
 import React from "react";
 import "./ResourceCard.css";
+import Link from '@mui/material/Link';
 
-const ResourceCard = ({ product, handleAddToCart }) => {
+const ResourceCard = ( data ) => {
+  //console.log("from ResourceCard: data = ", data);
+
   return (
           <Card className="card">
             <CardActionArea>
               <CardMedia
                 component="img"
                 height="140"
-                image={product.image}
-                alt="product"
+                image={data.resource.icon_url}
+                alt="resource"
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  {product.name}
+                  {data.resource.title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  ${product.cost}
+                  {data.resource.category}
                 </Typography>
-                <Rating name="read-only" value={product.rating} readOnly />
+                <Typography>
+                  <Link href={data.resource.link}>{data.resource.link}</Link>
+                </Typography>
+                <Typography>
+                  {data.resource.description}
+                </Typography>
               </CardContent>
             </CardActionArea>
-            <CardActions>
-              <Button fullWidth={true} color="primary" variant="contained" onClick={handleAddToCart}>
-                <AddShoppingCartOutlined />ADD TO CART
-              </Button>
-            </CardActions>
           </Card>
   );
 };
