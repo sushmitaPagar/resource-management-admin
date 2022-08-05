@@ -38,12 +38,12 @@ function a11yProps(index) {
   };
 }
 
-export default function BasicTabs() {
+export default function BasicTabs(props) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
-    console.log("from BasicTabs:: event, newValue= ", event, newValue);
     setValue(newValue);
+    props.parentCallBack(newValue);
   };
 
   return (
@@ -55,7 +55,7 @@ export default function BasicTabs() {
           <Tab label="Users" {...a11yProps(2)} />
         </Tabs>
       </Box>
-      <TabPanel value={value} index={0}>
+      {/* <TabPanel value={value} index={0}>
         Resources
       </TabPanel>
       <TabPanel value={value} index={1}>
@@ -63,7 +63,7 @@ export default function BasicTabs() {
       </TabPanel>
       <TabPanel value={value} index={2}>
         Users
-      </TabPanel>
+      </TabPanel> */}
     </Box>
   );
 }
