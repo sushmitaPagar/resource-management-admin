@@ -14,22 +14,23 @@ const ResourceCard = ( data ) => {
 
   return (
           <Card className="card">
-            <CardActionArea>
+            <CardActionArea className="card-action">
               <CardMedia
+                className="card-media"
                 component="img"
-                height="140"
+                height="50"
                 image={data.resource.icon_url}
                 alt="resource"
               />
               <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography gutterBottom variant="h6" component="div">
                   {data.resource.title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   {data.resource.category}
                 </Typography>
                 <Typography>
-                  <Link href={data.resource.link}>{data.resource.link}</Link>
+                  <Link href={data.resource.link} target="_blank" rel="noopener">{data.resource.link}</Link>
                 </Typography>
                 <Typography>
                   {data.resource.description}

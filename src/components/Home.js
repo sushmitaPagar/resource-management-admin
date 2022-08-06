@@ -84,7 +84,7 @@ const Home = () => {
                 name="search"
             />
         </Stack>
-        <Grid container spacing={2} sx={{margin: 2}}>
+        <Grid container spacing={2}>
             {finalData.map((data)=>{
                         return (
                           <Grid item xs={6} md={4} key={data.id}>

@@ -1,6 +1,17 @@
 .card {
-    height: 100%;
+    height: 10rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.card-action {
+    display: flex !important;
+    justify-content: space-between;
+}
+
+.card-media {
+    width: 4rem !important;
+    text-align: center;
 }
