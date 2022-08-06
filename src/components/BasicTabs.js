@@ -10,11 +10,14 @@ function a11yProps(index) {
   };
 }
 
-export default function BasicTabs(props) {
+const BasicTabs = (props) => {
+  //state to handle tab value
   const [value, setValue] = React.useState(0);
 
+  //function to handle change when any tab is clicked
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    //here tab value is passed to parent component with the help of parentCallBack
     props.parentCallBack(newValue);
   };
 
@@ -29,4 +32,6 @@ export default function BasicTabs(props) {
       </Box>
     </Box>
   );
-}
+};
+
+export default BasicTabs;

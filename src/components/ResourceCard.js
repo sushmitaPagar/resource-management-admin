@@ -9,8 +9,8 @@ import React from "react";
 import "./ResourceCard.css";
 import Link from '@mui/material/Link';
 
+//component which renders a single card
 const ResourceCard = ( data ) => {
-  //console.log("from ResourceCard: data = ", data);
 
   return (
           <Card className="card">
